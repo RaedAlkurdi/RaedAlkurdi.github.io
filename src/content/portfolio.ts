@@ -3,13 +3,11 @@ export const profile = {
   name: "Raed Alkurdi",
   title: "MSc Complex Adaptive Systems @ Chalmers",
   intro: "I build learning systems and autonomous agents — from machine learning models to agentic AI that reasons, plans and acts.",
-  email: "raed@example.com",
+  email: "alkurdiraed2@gmail.com",
   links: [
-    { label: "GitHub", href: "https://github.com/" },
-    { label: "LinkedIn", href: "https://linkedin.com/" },
-    { label: "Scholar", href: "https://scholar.google.com/" },
+    { label: "LinkedIn", href: "https://www.linkedin.com/in/raed-alkurdi-a0a0642aa" },
   ],
-  bio: "I'm a master's student at Chalmers University of Technology studying Complex Adaptive Systems. I'm drawn to how simple rules give rise to intelligent behavior — which led me to machine learning, reinforcement learning and agentic AI. I enjoy turning research ideas into working, well-engineered systems.",
+  bio: "I'm a master's student at Chalmers University of Technology in Complex Adaptive Systems, on the Machine Learning & Data Science track, with a BSc in Mechanical Engineering from Chalmers. I'm drawn to how simple rules give rise to intelligent behavior — which led me to machine learning, reinforcement learning and agentic AI. I enjoy turning research ideas into working, well-engineered systems.",
 };
 
 export const skills = [
@@ -31,8 +29,6 @@ export const projects: Project[] = [
 ];
 
 export const experience = [
-  { period: "2025 — now", role: "MSc, Complex Adaptive Systems", org: "Chalmers University of Technology", text: "Coursework in machine learning, neural networks and dynamical systems." },
-  { period: "2025", role: "ML Research Intern", org: "Sample AI Lab", text: "Built evaluation pipelines for LLM agents." },
-  { period: "2024", role: "Data Science Intern", org: "Sample Company", text: "Developed forecasting models used in production." },
-  { period: "2021 — 2024", role: "BSc, Engineering Physics", org: "Sample University", text: "Thesis on stochastic simulation of complex networks." },
+  { period: "Aug 2026 — Jun 2028", role: "MSc, Complex Adaptive Systems — Machine Learning & Data Science track", org: "Chalmers University of Technology", text: "Master's studies focused on machine learning, data science and complex adaptive systems." },
+  { period: "Aug 2023 — Jun 2026", role: "BSc, Mechanical Engineering", org: "Chalmers University of Technology", text: "Bachelor's degree in Mechanical Engineering." },
 ];

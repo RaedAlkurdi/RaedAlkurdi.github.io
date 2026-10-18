@@ -33,12 +33,6 @@ const principles = [
   ["Built to ship", "Clean, tested, observable code — not just notebooks."],
 ];
 
-const stats = [
-  ["6+", "Projects"],
-  ["3+", "AI agents built"],
-  ["2+", "Years of ML"],
-  ["15+", "Technologies"],
-];
 
 function Heading({ label, children }: { label: string; children: React.ReactNode }) {
   return (
@@ -113,14 +107,6 @@ function Index() {
                 <p className="font-mono text-xs text-primary">0{i + 1}</p>
                 <h3 className="mt-4 text-lg font-bold">{t}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</p>
-              </div>
-            ))}
-          </div>
-          <div className="card-dark reveal mt-6 grid grid-cols-2 gap-8 p-10 md:grid-cols-4">
-            {stats.map(([n, l]) => (
-              <div key={l}>
-                <p className="font-display text-5xl font-bold">{(n ?? "").replace("+", "")}<span className="text-primary">+</span></p>
-                <p className="mt-2 font-mono text-[0.7rem] uppercase tracking-widest text-muted-foreground">{l}</p>
               </div>
             ))}
           </div>
