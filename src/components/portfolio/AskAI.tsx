@@ -50,7 +50,7 @@ export function AskAI() {
             )}
             {messages.map((m) => (
               <div key={m.id} className={m.role === "user" ? "ask-user" : "ask-bot"}>
-                {m.parts.map((p, i) => (p.type === "text" ? <span key={i} className="whitespace-pre-wrap">{p.text}</span> : null))}
+                {m.parts.map((p, i) => (p.type === "text" ? <span key={i} className="whitespace-pre-wrap">{p.text.replace(/\*\*/g, "")}</span> : null))}
               </div>
             ))}
             {status === "submitted" && <div className="ask-bot"><span className="typing"><i /><i /><i /></span></div>}
