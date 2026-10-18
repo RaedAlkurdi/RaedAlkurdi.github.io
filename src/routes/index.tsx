@@ -17,14 +17,33 @@ export const Route = createFileRoute("/")({
 });
 
 const nav = [
-  ["projects", "Projects"],
   ["about", "About"],
-  ["experience", "Experience"],
+  ["skills", "Skills"],
+  ["projects", "Work"],
+  ["experience", "Journey"],
   ["contact", "Contact"],
 ] as const;
 
-function Label({ n, children }: { n: string; children: string }) {
-  return <p className="section-label">{n} / {children}</p>;
+const principles = [
+  ["Research-driven", "Grounded in theory from complex systems and machine learning."],
+  ["Agentic by design", "Tools, memory and multi-step reasoning that get real work done."],
+  ["Built to ship", "Clean, tested, observable code — not just notebooks."],
+];
+
+const stats = [
+  ["6+", "Projects"],
+  ["3+", "AI agents built"],
+  ["2+", "Years of ML"],
+  ["15+", "Technologies"],
+];
+
+function Heading({ label, children }: { label: string; children: React.ReactNode }) {
+  return (
+    <div>
+      <p className="section-label">{label}</p>
+      <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">{children}</h2>
+    </div>
+  );
 }
 
 function Index() {
@@ -32,51 +51,129 @@ function Index() {
   const [filter, setFilter] = useState("All");
   const shown = filter === "All" ? projects : projects.filter((p) => p.tags.includes(filter));
   const [form, setForm] = useState({ name: "", message: "" });
+  const tools = skills.flatMap((s) => s.items);
 
   return (
-    <div className="min-h-screen bg-background text-foreground">
-      <header className="sticky top-0 z-10 border-b border-border bg-background/90 backdrop-blur">
-        <div className="container-page flex h-14 items-center justify-between">
-          <a href="#top" className="font-mono text-sm font-bold">raed.alkurdi</a>
-          <nav className="hidden gap-6 sm:flex">
+    <div className="min-h-screen overflow-x-hidden text-foreground">
+      <header className="fixed inset-x-0 top-4 z-20 px-4">
+        <div className="glass mx-auto flex h-14 max-w-5xl items-center justify-between rounded-full pl-6 pr-2">
+          <a href="#top" className="font-display text-lg font-bold">RA<span className="text-primary">.</span></a>
+          <nav className="hidden gap-1 md:flex">
             {nav.map(([id, l]) => (
-              <a key={id} href={`#${id}`} className="font-mono text-xs text-muted-foreground hover:text-foreground">{l.toLowerCase()}</a>
+              <a key={id} href={`#${id}`} className="rounded-full px-4 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-primary">{l}</a>
             ))}
           </nav>
+          <a href="#contact" className="btn-ink !py-2">Get in touch</a>
         </div>
       </header>
 
       <main id="top">
-        <section className="container-page py-24 sm:py-32 fade-in">
-          <p className="section-label">~/hello</p>
-          <h1 className="mt-4 font-mono text-5xl font-bold tracking-tight sm:text-7xl">
-            {profile.name}<span className="cursor">_</span>
-          </h1>
-          <p className="mt-6 font-mono text-sm text-muted-foreground sm:text-base">{profile.title}</p>
-          <p className="mt-4 max-w-2xl text-lg leading-relaxed">{profile.intro}</p>
-          <div className="mt-10 flex flex-wrap gap-3">
-            <a href="#projects" className="btn-ink">View projects →</a>
-            <a href="#contact" className="btn-outline">Get in touch</a>
+        {/* Hero */}
+        <section className="container-page grid min-h-screen items-center gap-12 pt-28 pb-16 lg:grid-cols-[1.2fr_1fr]">
+          <div className="fade-in">
+            <span className="glass inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-[0.7rem] uppercase tracking-widest text-muted-foreground">
+              <span className="h-2 w-2 rounded-full bg-signal" /> Open to ML / AI roles
+            </span>
+            <h1 className="mt-6 text-6xl font-bold leading-[0.95] sm:text-7xl">Raed<br />Alkurdi</h1>
+            <p className="mt-6 font-display text-2xl text-muted-foreground sm:text-3xl">
+              I build <span className="text-gradient font-bold">Agentic AI</span><span className="cursor">_</span>
+            </p>
+            <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
+              {profile.title}. {profile.intro}
+            </p>
+            <div className="mt-10 flex flex-wrap gap-3">
+              <a href="#projects" className="btn-ink">✦ View my work</a>
+              <a href="#contact" className="btn-outline">Let's talk ↗</a>
+            </div>
+          </div>
+
+          <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
+            <div className="card-dark flex h-full flex-col justify-between overflow-hidden p-8">
+              <p className="font-mono text-xs text-muted-foreground">~/raed/agent.py</p>
+              <pre className="font-mono text-xs leading-relaxed text-muted-foreground">
+{`agent = Agent(
+  model="llm",
+  tools=[search, code, memory],
+)
+
+while not goal.done:
+  plan  = agent.think(state)
+  state = agent.act(plan)`}
+              </pre>
+              <p className="font-display text-7xl font-bold text-primary">RA.</p>
+            </div>
+            {[["RL", "-left-6 top-10"], ["Multi-agent", "-right-6 top-1/3"], ["ML", "-left-8 bottom-1/4"], ["LLMs", "-right-4 bottom-8"]].map(([t, pos], i) => (
+              <span key={t} className={`glass float absolute ${pos} rounded-full px-3 py-1.5 font-mono text-xs text-primary`} style={{ animationDelay: `${i * 0.6}s` }}>{t}</span>
+            ))}
           </div>
         </section>
 
-        <section id="projects" className="container-page border-t border-border py-20">
-          <Label n="01">projects</Label>
-          <div className="mt-6 flex flex-wrap gap-2">
+        {/* About */}
+        <section id="about" className="container-page py-24">
+          <Heading label="About">Learning systems that <span className="text-gradient">adapt</span></Heading>
+          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{profile.bio}</p>
+          <div className="mt-12 grid gap-5 md:grid-cols-3">
+            {principles.map(([t, d], i) => (
+              <div key={t} className="card-dark p-7">
+                <p className="font-mono text-xs text-primary">0{i + 1}</p>
+                <h3 className="mt-4 text-lg font-bold">{t}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</p>
+              </div>
+            ))}
+          </div>
+          <div className="card-dark mt-6 grid grid-cols-2 gap-8 p-10 md:grid-cols-4">
+            {stats.map(([n, l]) => (
+              <div key={l}>
+                <p className="font-display text-5xl font-bold">{n.replace("+", "")}<span className="text-primary">+</span></p>
+                <p className="mt-2 font-mono text-[0.7rem] uppercase tracking-widest text-muted-foreground">{l}</p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        {/* Skills */}
+        <section id="skills" className="py-24">
+          <div className="container-page">
+            <Heading label="Toolkit">The stack behind the <span className="text-gradient">models</span></Heading>
+            <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+              {skills.map((s) => (
+                <div key={s.group} className="card-dark p-6">
+                  <h3 className="font-bold">{s.group}</h3>
+                  <p className="mt-1 font-mono text-xs text-muted-foreground">{s.items.length} technologies</p>
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {s.items.map((i) => <span key={i} className="tag">{i}</span>)}
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="mt-14 overflow-hidden border-y border-border py-5">
+            <div className="marquee flex w-max gap-8 font-display text-2xl font-bold text-muted-foreground">
+              {[...tools, ...tools].map((t, i) => (
+                <span key={i} className="flex items-center gap-8">{t}<span className="text-primary">✦</span></span>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Projects */}
+        <section id="projects" className="container-page py-24">
+          <Heading label="Selected work">Projects in <span className="text-gradient">AI & ML</span></Heading>
+          <div className="mt-8 flex flex-wrap gap-2">
             {tags.map((t) => (
               <button key={t} onClick={() => setFilter(t)} className={filter === t ? "chip chip-active" : "chip"}>{t}</button>
             ))}
           </div>
-          <div className="mt-8 grid gap-px overflow-hidden rounded-md border border-border bg-border sm:grid-cols-2 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {shown.map((p, i) => (
-              <article key={p.title} className="flex flex-col bg-background p-6 transition-colors hover:bg-secondary">
-                <p className="font-mono text-xs text-muted-foreground">{String(i + 1).padStart(2, "0")}</p>
-                <h3 className="mt-3 font-mono text-lg font-semibold">{p.title}</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
-                <div className="mt-4 flex flex-wrap gap-1.5">
+              <article key={p.title} className="card-dark group flex flex-col p-7 hover:-translate-y-1">
+                <p className="font-mono text-xs text-primary">{String(i + 1).padStart(2, "0")}</p>
+                <h3 className="mt-4 text-xl font-bold">{p.title}</h3>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
+                <div className="mt-5 flex flex-wrap gap-1.5">
                   {p.tags.map((t) => <span key={t} className="tag">{t}</span>)}
                 </div>
-                <div className="mt-4 flex gap-4 font-mono text-xs">
+                <div className="mt-5 flex gap-5 font-mono text-xs">
                   {p.github && <a href={p.github} className="link">github ↗</a>}
                   {p.demo && <a href={p.demo} className="link">demo ↗</a>}
                 </div>
@@ -85,61 +182,48 @@ function Index() {
           </div>
         </section>
 
-        <section id="about" className="container-page grid gap-12 border-t border-border py-20 lg:grid-cols-2">
-          <div>
-            <Label n="02">about</Label>
-            <p className="mt-6 text-lg leading-relaxed">{profile.bio}</p>
+        {/* Experience */}
+        <section id="experience" className="container-page py-24">
+          <div className="flex flex-wrap items-end justify-between gap-6">
+            <Heading label="Journey">How I got <span className="text-gradient">here</span></Heading>
+            <a href="#" className="btn-outline">Download CV ↓</a>
           </div>
-          <div className="grid gap-6 sm:grid-cols-2">
-            {skills.map((s) => (
-              <div key={s.group}>
-                <h3 className="font-mono text-sm font-semibold">{s.group}</h3>
-                <ul className="mt-3 space-y-1 text-sm text-muted-foreground">
-                  {s.items.map((i) => <li key={i}>— {i}</li>)}
-                </ul>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="experience" className="container-page border-t border-border py-20">
-          <div className="flex items-end justify-between gap-4">
-            <Label n="03">experience</Label>
-            <a href="#" className="btn-outline">Download CV</a>
-          </div>
-          <ol className="mt-10 border-l border-border">
+          <ol className="mt-12 space-y-5">
             {experience.map((e) => (
-              <li key={e.role} className="relative pb-10 pl-8 last:pb-0">
-                <span className="absolute -left-[5px] top-1.5 h-2.5 w-2.5 rounded-full bg-foreground" />
-                <p className="font-mono text-xs text-muted-foreground">{e.period}</p>
-                <h3 className="mt-1 font-mono font-semibold">{e.role}</h3>
-                <p className="text-sm">{e.org}</p>
-                <p className="mt-2 max-w-xl text-sm text-muted-foreground">{e.text}</p>
+              <li key={e.role} className="card-dark grid gap-2 p-7 md:grid-cols-[10rem_1fr]">
+                <p className="font-mono text-xs text-primary">{e.period}</p>
+                <div>
+                  <h3 className="text-lg font-bold">{e.role}</h3>
+                  <p className="text-sm text-muted-foreground">{e.org}</p>
+                  <p className="mt-2 text-sm text-muted-foreground">{e.text}</p>
+                </div>
               </li>
             ))}
           </ol>
         </section>
 
-        <section id="contact" className="container-page grid gap-12 border-t border-border py-20 lg:grid-cols-2">
-          <div>
-            <Label n="04">contact</Label>
-            <h2 className="mt-6 font-mono text-3xl font-bold">Let's build something intelligent.</h2>
-            <a href={`mailto:${profile.email}`} className="link mt-6 inline-block font-mono">{profile.email}</a>
-            <div className="mt-4 flex gap-5 font-mono text-sm">
-              {profile.links.map((l) => <a key={l.label} href={l.href} target="_blank" rel="noreferrer" className="link">{l.label} ↗</a>)}
+        {/* Contact */}
+        <section id="contact" className="container-page py-24">
+          <div className="card-dark grid gap-12 p-8 sm:p-12 lg:grid-cols-2">
+            <div>
+              <Heading label="Contact">Let's build something <span className="text-gradient">intelligent</span></Heading>
+              <a href={`mailto:${profile.email}`} className="mt-8 inline-block font-mono text-primary">{profile.email}</a>
+              <div className="mt-4 flex gap-5 font-mono text-sm">
+                {profile.links.map((l) => <a key={l.label} href={l.href} target="_blank" rel="noreferrer" className="link">{l.label} ↗</a>)}
+              </div>
             </div>
+            <form
+              className="space-y-4"
+              onSubmit={(e) => {
+                e.preventDefault();
+                window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(`Hello from ${form.name}`)}&body=${encodeURIComponent(form.message)}`;
+              }}
+            >
+              <input required placeholder="Your name" className="field" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
+              <textarea required rows={5} placeholder="Message" className="field" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
+              <button type="submit" className="btn-ink">Send message →</button>
+            </form>
           </div>
-          <form
-            className="space-y-4"
-            onSubmit={(e) => {
-              e.preventDefault();
-              window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(`Hello from ${form.name}`)}&body=${encodeURIComponent(form.message)}`;
-            }}
-          >
-            <input required placeholder="Your name" className="field" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-            <textarea required rows={5} placeholder="Message" className="field" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
-            <button type="submit" className="btn-ink">Send message →</button>
-          </form>
         </section>
       </main>
 
