@@ -90,19 +90,9 @@ function Index() {
           </div>
 
           <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
-            <div data-tilt className="card-dark flex h-full flex-col justify-between overflow-hidden p-8">
-              <p className="font-mono text-xs text-muted-foreground">~/raed/agent.py</p>
-              <pre className="font-mono text-xs leading-relaxed text-muted-foreground">
-{`agent = Agent(
-  model="llm",
-  tools=[search, code, memory],
-)
-
-while not goal.done:
-  plan  = agent.think(state)
-  state = agent.act(plan)`}
-              </pre>
-              <p className="font-display text-7xl font-bold text-primary">RA.</p>
+            <div data-tilt className="card-dark flex h-full items-end justify-center overflow-hidden">
+              <div className="pointer-events-none absolute inset-x-0 bottom-0 h-3/4 bg-[radial-gradient(circle_at_50%_70%,var(--glow),transparent_70%)]" />
+              <img src={raedPhoto} alt="Raed Alkurdi" className="relative h-[92%] w-auto object-contain object-bottom" />
             </div>
             {[["RL", "-left-6 top-10"], ["Multi-agent", "-right-6 top-1/3"], ["ML", "-left-8 bottom-1/4"], ["LLMs", "-right-4 bottom-8"]].map(([t, pos], i) => (
               <span key={t} className={`glass float absolute ${pos} rounded-full px-3 py-1.5 font-mono text-xs text-primary`} style={{ animationDelay: `${i * 0.6}s` }}>{t}</span>
