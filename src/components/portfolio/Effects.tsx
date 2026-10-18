@@ -66,7 +66,7 @@ export function Effects() {
       const c = e.currentTarget as HTMLElement; const r = c.getBoundingClientRect();
       const x = e.clientX - r.left, y = e.clientY - r.top;
       c.style.setProperty("--mx", `${x}px`); c.style.setProperty("--my", `${y}px`);
-      if (c.dataset.tilt !== undefined) c.style.transform = `perspective(900px) rotateY(${(x / r.width - 0.5) * 8}deg) rotateX(${(0.5 - y / r.height) * 8}deg)`;
+      if (c.dataset["tilt"] !== undefined) c.style.transform = `perspective(900px) rotateY(${(x / r.width - 0.5) * 8}deg) rotateX(${(0.5 - y / r.height) * 8}deg)`;
     };
     const onLeave = (e: MouseEvent) => { (e.currentTarget as HTMLElement).style.transform = ""; };
     cards.forEach((c) => { c.addEventListener("mousemove", onMove); c.addEventListener("mouseleave", onLeave); });

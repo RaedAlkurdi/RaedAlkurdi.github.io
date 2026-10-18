@@ -126,7 +126,7 @@ while not goal.done:
           <div className="card-dark reveal mt-6 grid grid-cols-2 gap-8 p-10 md:grid-cols-4">
             {stats.map(([n, l]) => (
               <div key={l}>
-                <p className="font-display text-5xl font-bold">{n.replace("+", "")}<span className="text-primary">+</span></p>
+                <p className="font-display text-5xl font-bold">{(n ?? "").replace("+", "")}<span className="text-primary">+</span></p>
                 <p className="mt-2 font-mono text-[0.7rem] uppercase tracking-widest text-muted-foreground">{l}</p>
               </div>
             ))}
