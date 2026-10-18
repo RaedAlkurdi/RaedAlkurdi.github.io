@@ -102,7 +102,7 @@ export function Effects() {
           <div className="mt-2 h-px bg-border"><div className="h-px bg-primary transition-all" style={{ width: `${pct}%` }} /></div>
         </div>
       </div>
-      <div ref={bar} className="progress-bar fixed inset-x-0 top-0 z-50 h-[3px] origin-left scale-x-0" />
+      <div ref={bar} className="progress-bar fixed inset-x-0 top-0 z-50 h-[3px] origin-left" style={{ transform: "scaleX(0)" }} />
       <div ref={spot} className="pointer-events-none fixed inset-0 z-0" />
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         {dots.map((d, i) => (
