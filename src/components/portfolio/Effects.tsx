@@ -40,7 +40,12 @@ export function Effects() {
       if (ring.current) ring.current.style.transform = `translate(${rx}px, ${ry}px) translate(-50%,-50%)`;
       raf = requestAnimationFrame(loop);
     };
+    let lastY = scrollY;
     const scroll = () => {
+      const y = scrollY;
+      const hd = document.getElementById("site-header");
+      if (hd) hd.style.transform = y > lastY && y > 120 ? "translateY(-150%)" : "";
+      lastY = y;
       const h = document.documentElement.scrollHeight - innerHeight;
       if (bar.current) bar.current.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
     };
@@ -97,7 +102,7 @@ export function Effects() {
           <div className="mt-2 h-px bg-border"><div className="h-px bg-primary transition-all" style={{ width: `${pct}%` }} /></div>
         </div>
       </div>
-      <div ref={bar} className="fixed inset-x-0 top-0 z-50 h-[2px] origin-left scale-x-0 bg-primary" />
+      <div ref={bar} className="progress-bar fixed inset-x-0 top-0 z-50 h-[3px] origin-left scale-x-0" />
       <div ref={spot} className="pointer-events-none fixed inset-0 z-0" />
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
         {dots.map((d, i) => (

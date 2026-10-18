@@ -58,8 +58,8 @@ function Index() {
   return (
     <div className="min-h-screen overflow-x-hidden text-foreground">
       <Effects />
-      <header className="fixed inset-x-0 top-4 z-20 px-4">
-        <div className="glass mx-auto flex h-14 max-w-5xl items-center justify-between rounded-full pl-6 pr-2">
+      <header id="site-header" className="fixed inset-x-0 top-4 z-20 px-4 transition-transform duration-500">
+        <div className="glass-gold mx-auto flex h-14 max-w-5xl items-center justify-between rounded-full pl-6 pr-2">
           <a href="#top" className="font-display text-lg font-bold">RA<span className="text-primary">.</span></a>
           <nav className="hidden gap-1 md:flex">
             {nav.map(([id, l]) => (
