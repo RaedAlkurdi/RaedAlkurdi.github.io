@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Effects } from "@/components/portfolio/Effects";
+import { HeroPhoto } from "@/components/portfolio/HeroPhoto";
 import { profile, skills, projects, experience } from "@/content/portfolio";
 
 export const Route = createFileRoute("/")({
@@ -92,7 +93,7 @@ function Index() {
           <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
             <div data-tilt className="card-dark flex h-full items-end justify-center overflow-hidden">
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-3/4 bg-[radial-gradient(circle_at_50%_70%,var(--glow),transparent_70%)]" />
-              <img src={raedPhoto} alt="Raed Alkurdi" className="relative h-[92%] w-auto object-contain object-bottom" />
+              <HeroPhoto />
             </div>
             {[["RL", "-left-6 top-10"], ["Multi-agent", "-right-6 top-1/3"], ["ML", "-left-8 bottom-1/4"], ["LLMs", "-right-4 bottom-8"]].map(([t, pos], i) => (
               <span key={t} className={`glass float absolute ${pos} rounded-full px-3 py-1.5 font-mono text-xs text-primary`} style={{ animationDelay: `${i * 0.6}s` }}>{t}</span>
