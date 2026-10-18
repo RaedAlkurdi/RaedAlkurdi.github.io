@@ -44,7 +44,7 @@ export function Effects() {
     const scroll = () => {
       const y = scrollY;
       const hd = document.getElementById("site-header");
-      if (hd) hd.style.transform = y > lastY && y > 120 ? "translateY(-150%)" : "";
+      if (hd) hd.style.transform = y > 80 ? "translateY(-150%)" : "";
       lastY = y;
       const h = document.documentElement.scrollHeight - innerHeight;
       if (bar.current) bar.current.style.transform = `scaleX(${h > 0 ? scrollY / h : 0})`;
