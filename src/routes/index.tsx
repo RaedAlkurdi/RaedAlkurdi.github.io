@@ -1,5 +1,6 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
+import { Effects } from "@/components/portfolio/Effects";
 import { profile, skills, projects, experience } from "@/content/portfolio";
 
 export const Route = createFileRoute("/")({
@@ -39,7 +40,7 @@ const stats = [
 
 function Heading({ label, children }: { label: string; children: React.ReactNode }) {
   return (
-    <div>
+    <div className="reveal">
       <p className="section-label">{label}</p>
       <h2 className="mt-4 text-4xl font-bold leading-tight sm:text-5xl">{children}</h2>
     </div>
@@ -55,6 +56,7 @@ function Index() {
 
   return (
     <div className="min-h-screen overflow-x-hidden text-foreground">
+      <Effects />
       <header className="fixed inset-x-0 top-4 z-20 px-4">
         <div className="glass mx-auto flex h-14 max-w-5xl items-center justify-between rounded-full pl-6 pr-2">
           <a href="#top" className="font-display text-lg font-bold">RA<span className="text-primary">.</span></a>
@@ -88,7 +90,7 @@ function Index() {
           </div>
 
           <div className="relative mx-auto aspect-[4/5] w-full max-w-sm">
-            <div className="card-dark flex h-full flex-col justify-between overflow-hidden p-8">
+            <div data-tilt className="card-dark flex h-full flex-col justify-between overflow-hidden p-8">
               <p className="font-mono text-xs text-muted-foreground">~/raed/agent.py</p>
               <pre className="font-mono text-xs leading-relaxed text-muted-foreground">
 {`agent = Agent(
@@ -111,17 +113,17 @@ while not goal.done:
         {/* About */}
         <section id="about" className="container-page py-24">
           <Heading label="About">Learning systems that <span className="text-gradient">adapt</span></Heading>
-          <p className="mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{profile.bio}</p>
+          <p className="reveal mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{profile.bio}</p>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {principles.map(([t, d], i) => (
-              <div key={t} className="card-dark p-7">
+              <div key={t} className="card-dark reveal p-7" style={{ "--d": `${i * 0.1}s` } as React.CSSProperties}>
                 <p className="font-mono text-xs text-primary">0{i + 1}</p>
                 <h3 className="mt-4 text-lg font-bold">{t}</h3>
                 <p className="mt-2 text-sm leading-relaxed text-muted-foreground">{d}</p>
               </div>
             ))}
           </div>
-          <div className="card-dark mt-6 grid grid-cols-2 gap-8 p-10 md:grid-cols-4">
+          <div className="card-dark reveal mt-6 grid grid-cols-2 gap-8 p-10 md:grid-cols-4">
             {stats.map(([n, l]) => (
               <div key={l}>
                 <p className="font-display text-5xl font-bold">{n.replace("+", "")}<span className="text-primary">+</span></p>
@@ -136,8 +138,8 @@ while not goal.done:
           <div className="container-page">
             <Heading label="Toolkit">The stack behind the <span className="text-gradient">models</span></Heading>
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-              {skills.map((s) => (
-                <div key={s.group} className="card-dark p-6">
+              {skills.map((s, i) => (
+                <div key={s.group} className="card-dark reveal p-6" style={{ "--d": `${i * 0.1}s` } as React.CSSProperties}>
                   <h3 className="font-bold">{s.group}</h3>
                   <p className="mt-1 font-mono text-xs text-muted-foreground">{s.items.length} technologies</p>
                   <div className="mt-5 flex flex-wrap gap-2">
@@ -166,7 +168,7 @@ while not goal.done:
           </div>
           <div className="mt-8 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {shown.map((p, i) => (
-              <article key={p.title} className="card-dark group flex flex-col p-7 hover:-translate-y-1">
+              <article key={p.title} data-tilt className="card-dark reveal group flex flex-col p-7" style={{ "--d": `${(i % 3) * 0.1}s` } as React.CSSProperties}>
                 <p className="font-mono text-xs text-primary">{String(i + 1).padStart(2, "0")}</p>
                 <h3 className="mt-4 text-xl font-bold">{p.title}</h3>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-muted-foreground">{p.description}</p>
@@ -190,7 +192,7 @@ while not goal.done:
           </div>
           <ol className="mt-12 space-y-5">
             {experience.map((e) => (
-              <li key={e.role} className="card-dark grid gap-2 p-7 md:grid-cols-[10rem_1fr]">
+              <li key={e.role} className="card-dark reveal grid gap-2 p-7 md:grid-cols-[10rem_1fr]">
                 <p className="font-mono text-xs text-primary">{e.period}</p>
                 <div>
                   <h3 className="text-lg font-bold">{e.role}</h3>
@@ -204,7 +206,7 @@ while not goal.done:
 
         {/* Contact */}
         <section id="contact" className="container-page py-24">
-          <div className="card-dark grid gap-12 p-8 sm:p-12 lg:grid-cols-2">
+          <div className="card-dark reveal grid gap-12 p-8 sm:p-12 lg:grid-cols-2">
             <div>
               <Heading label="Contact">Let's build something <span className="text-gradient">intelligent</span></Heading>
               <a href={`mailto:${profile.email}`} className="mt-8 inline-block font-mono text-primary">{profile.email}</a>

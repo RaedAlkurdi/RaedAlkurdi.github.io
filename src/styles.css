@@ -229,5 +229,5 @@
 .card-dark::before { content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none; opacity: 0; transition: opacity .3s; background: radial-gradient(300px circle at var(--mx) var(--my), oklch(0.78 0.12 70 / 10%), transparent 70%); }
 .card-dark:hover::before { opacity: 1; }
 .btn-ink, .btn-outline { transition: translate .2s ease-out, transform .2s, box-shadow .2s, border-color .2s; }
-main, header, footer { position: relative; z-index: 1; }
+main, footer { position: relative; z-index: 1; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } .particle, .marquee, .float { animation: none; } }
