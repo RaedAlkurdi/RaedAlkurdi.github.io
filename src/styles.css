@@ -231,3 +231,5 @@
 .btn-ink, .btn-outline { transition: translate .2s ease-out, transform .2s, box-shadow .2s, border-color .2s; }
 main, footer { position: relative; z-index: 1; }
 @media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } .particle, .marquee, .float { animation: none; } }
+.glass-gold { background: linear-gradient(90deg, oklch(0.78 0.12 70 / 10%), oklch(0.2 0.02 70 / 45%), oklch(0.78 0.12 70 / 10%)); border: 1px solid oklch(0.78 0.12 70 / 25%); backdrop-filter: blur(16px) saturate(140%); }
+.progress-bar { background: linear-gradient(90deg, oklch(0.78 0.12 70 / 40%), var(--primary)); box-shadow: 0 0 12px var(--primary); }
