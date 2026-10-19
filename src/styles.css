@@ -245,23 +245,23 @@ main, footer { position: relative; z-index: 1; }
 /* Hero portrait glow */
 .hero-photo {
   filter:
-    drop-shadow(0 0 22px oklch(0.78 0.12 70 / 32%))
-    drop-shadow(0 0 60px oklch(0.78 0.12 70 / 22%))
-    drop-shadow(0 0 130px oklch(0.78 0.12 70 / 14%));
-  animation: photo-glow 7s ease-in-out infinite;
+    drop-shadow(0 0 26px oklch(0.78 0.12 70 / 20%))
+    drop-shadow(0 0 72px oklch(0.78 0.12 70 / 13%))
+    drop-shadow(0 0 150px oklch(0.78 0.12 70 / 8%));
+  animation: photo-glow 8s ease-in-out infinite;
 }
 @keyframes photo-glow {
   0%, 100% {
     filter:
-      drop-shadow(0 0 22px oklch(0.78 0.12 70 / 32%))
-      drop-shadow(0 0 60px oklch(0.78 0.12 70 / 22%))
-      drop-shadow(0 0 130px oklch(0.78 0.12 70 / 14%));
+      drop-shadow(0 0 26px oklch(0.78 0.12 70 / 20%))
+      drop-shadow(0 0 72px oklch(0.78 0.12 70 / 13%))
+      drop-shadow(0 0 150px oklch(0.78 0.12 70 / 8%));
   }
   50% {
     filter:
-      drop-shadow(0 0 30px oklch(0.78 0.12 70 / 44%))
-      drop-shadow(0 0 78px oklch(0.78 0.12 70 / 30%))
-      drop-shadow(0 0 160px oklch(0.78 0.12 70 / 20%));
+      drop-shadow(0 0 34px oklch(0.78 0.12 70 / 28%))
+      drop-shadow(0 0 90px oklch(0.78 0.12 70 / 18%))
+      drop-shadow(0 0 180px oklch(0.78 0.12 70 / 11%));
   }
 }
 @media (prefers-reduced-motion: reduce) { .hero-photo { animation: none; } }
