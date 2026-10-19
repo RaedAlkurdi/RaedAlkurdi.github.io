@@ -230,7 +230,15 @@
 .card-dark:hover::before { opacity: 1; }
 .btn-ink, .btn-outline { transition: translate .2s ease-out, transform .2s, box-shadow .2s, border-color .2s; }
 main, footer { position: relative; z-index: 1; }
-@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } .particle, .marquee, .float { animation: none; } }
+
+/* Pulsing gold glow on the header call-to-action */
+.btn-glow { animation: cta-glow 2.4s ease-in-out infinite; }
+@keyframes cta-glow {
+  0%, 100% { box-shadow: 0 0 0 0 oklch(0.78 0.12 70 / 0%), 0 0 14px -6px oklch(0.78 0.12 70 / 45%); }
+  50% { box-shadow: 0 0 0 6px oklch(0.78 0.12 70 / 14%), 0 0 34px -4px oklch(0.78 0.12 70 / 80%); }
+}
+
+@media (prefers-reduced-motion: reduce) { .reveal { opacity: 1; transform: none; } .particle, .marquee, .float, .btn-glow { animation: none; } }
 .glass-gold { background: linear-gradient(90deg, oklch(0.78 0.12 70 / 10%), oklch(0.2 0.02 70 / 45%), oklch(0.78 0.12 70 / 10%)); border: 1px solid oklch(0.78 0.12 70 / 25%); backdrop-filter: blur(16px) saturate(140%); }
 .progress-bar { background: linear-gradient(90deg, oklch(0.78 0.12 70 / 40%), var(--primary)); box-shadow: 0 0 12px var(--primary); }
 .ask-fab { position: fixed; right: 1.5rem; bottom: 1.5rem; z-index: 90; width: 3.5rem; height: 3.5rem; border-radius: 999px; background: var(--primary); color: var(--primary-foreground); font-size: 1.4rem; box-shadow: 0 10px 34px -8px var(--primary); transition: transform .2s; }

@@ -62,7 +62,7 @@ function Index() {
               <a key={id} href={`#${id}`} className="rounded-full px-4 py-1.5 text-sm text-muted-foreground transition-colors hover:bg-secondary hover:text-primary">{l}</a>
             ))}
           </nav>
-          <a href="#contact" className="btn-ink !py-2">Get in touch</a>
+          <a href="#contact" className="btn-ink btn-glow !py-2">Get in touch</a>
         </div>
       </header>
 
