@@ -20,12 +20,18 @@ export const skills = [
 export type Project = { title: string; description: string; tags: string[]; github?: string; demo?: string };
 
 export const projects: Project[] = [
-  { title: "Multi-Agent Research Assistant", description: "A team of LLM agents that plan, search and summarize literature into structured reports.", tags: ["Agentic AI", "LLM"], github: "#", demo: "#" },
-  { title: "RL Locomotion Agent", description: "PPO agent trained to walk in simulated terrain with curriculum learning.", tags: ["RL", "ML"], github: "#" },
-  { title: "Tool-Using LLM Agent", description: "An agent that chooses and chains APIs to complete multi-step tasks, with an evaluation harness.", tags: ["Agentic AI", "LLM"], github: "#", demo: "#" },
-  { title: "Graph Neural Networks Study", description: "Benchmarking message-passing architectures on molecular property prediction.", tags: ["ML", "Research"], github: "#" },
-  { title: "Time-Series Forecasting", description: "Transformer vs. classical models for energy demand forecasting.", tags: ["ML"], github: "#" },
-  { title: "Emergent Flocking Simulation", description: "Agent-based model where collective behavior emerges from local rules, tuned with evolution.", tags: ["Complex Systems", "Research"], github: "#", demo: "#" },
+  {
+    title: "Premier League Market Value Predictor",
+    description: "Predicts a Premier League player's estimated market value from season statistics. Built on Transfermarkt data — appearances, player details and historical valuations — deriving goals, assists, minutes played, age and position. Trained on seasons up to 2023/24 and tested on 2024/25, reaching a mean absolute error of about €10.88 million.",
+    tags: ["ML", "Regression", "Data Science"],
+    github: "https://github.com/RaedAlkurdi/premier-league-market-value-predictor",
+  },
+  {
+    title: "Customer Churn Prediction",
+    description: "Identifies telecom customers likely to cancel, using IBM's Telco Customer Churn dataset of 7,043 customers. Compared a baseline, logistic regression and XGBoost, choosing the model and decision threshold on validation data. At a 0.35 threshold, logistic regression caught 267 of 374 churners in the test set — 71.4% recall.",
+    tags: ["ML", "Classification", "Data Science"],
+    github: "https://github.com/RaedAlkurdi/customer-churn-project",
+  },
 ];
 
 export const experience = [
