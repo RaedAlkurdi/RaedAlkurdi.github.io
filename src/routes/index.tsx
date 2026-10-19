@@ -187,7 +187,7 @@ function Index() {
         <section id="contact" className="container-page py-24">
           <div className="card-dark reveal grid gap-12 p-8 sm:p-12 lg:grid-cols-2">
             <div>
-              <Heading label="Contact">Let's build something <span className="text-gradient">intelligent</span></Heading>
+              <Heading label="Contact">Let's build something <span className="text-shimmer">intelligent</span></Heading>
               <a href={`mailto:${profile.email}`} className="mt-8 inline-block font-mono text-primary">{profile.email}</a>
               <div className="mt-4 flex gap-5 font-mono text-sm">
                 {profile.links.map((l) => <a key={l.label} href={l.href} target="_blank" rel="noreferrer" className="link">{l.label} ↗</a>)}
