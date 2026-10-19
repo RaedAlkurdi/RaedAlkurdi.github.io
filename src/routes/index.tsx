@@ -167,7 +167,6 @@ function Index() {
         <section id="experience" className="container-page py-24">
           <div className="flex flex-wrap items-end justify-between gap-6">
             <Heading label="Journey">How I got <span className="text-gradient">here</span></Heading>
-            <a href="#" className="btn-outline">Download CV ↓</a>
           </div>
           <ol className="mt-12 space-y-5">
             {experience.map((e) => (
