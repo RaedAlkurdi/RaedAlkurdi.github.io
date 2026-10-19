@@ -204,6 +204,14 @@
   &:focus { outline: none; border-color: var(--ring); }
 }
 @utility text-gradient { background: linear-gradient(90deg, var(--primary), oklch(0.86 0.09 85)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+@utility text-shimmer {
+  background: linear-gradient(100deg, var(--primary) 0%, var(--primary) 30%, oklch(0.97 0.05 92) 50%, var(--primary) 70%, var(--primary) 100%);
+  background-size: 300% 100%; background-position: 0% 0;
+  -webkit-background-clip: text; background-clip: text; color: transparent;
+  animation: shimmer 3.4s ease-in-out infinite;
+}
+@keyframes shimmer { 0% { background-position: -30% 0; } 55%, 100% { background-position: 130% 0; } }
+
 @utility cursor { animation: blink 1s steps(1) infinite; color: var(--primary); }
 @utility fade-in { animation: fadeUp .8s ease-out both; }
 @utility marquee { animation: marquee 30s linear infinite; }
