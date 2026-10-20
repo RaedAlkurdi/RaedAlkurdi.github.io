@@ -10,6 +10,13 @@ export function Effects() {
   const [loaded, setLoaded] = useState(false);
   const [fine, setFine] = useState(false);
   const [dots, setDots] = useState<{ l: number; t: number; d: number; s: number }[]>([]);
+  const [stars, setStars] = useState<{ l: number; t: number; d: number; s: number }[]>([]);
+  const [orbs] = useState([
+    { l: "-5%", t: "10%", size: "38rem", color: "oklch(0.78 0.12 70 / 7%)", dur: "26s" },
+    { l: "60%", t: "-8%", size: "30rem", color: "oklch(0.75 0.09 95 / 6%)", dur: "32s" },
+    { l: "35%", t: "65%", size: "34rem", color: "oklch(0.8 0.1 60 / 5%)", dur: "38s" },
+  ]);
+  const [shoots, setShoots] = useState<{ l: number; t: number; d: number }[]>([]);
 
   // Loader
   useEffect(() => {
@@ -20,6 +27,8 @@ export function Effects() {
       if (v >= 100) { clearInterval(id); setTimeout(() => setLoaded(true), 350); }
     }, 60);
     setDots(Array.from({ length: 24 }, () => ({ l: Math.random() * 100, t: Math.random() * 100, d: Math.random() * 10, s: 8 + Math.random() * 12 })));
+    setStars(Array.from({ length: 46 }, () => ({ l: Math.random() * 100, t: Math.random() * 100, d: Math.random() * 6, s: 2 + Math.random() * 4 })));
+    setShoots(Array.from({ length: 2 }, (_, i) => ({ l: 10 + Math.random() * 70, t: Math.random() * 40, d: i * 7 })));
     return () => clearInterval(id);
   }, []);
 
@@ -103,6 +112,19 @@ export function Effects() {
       <div ref={bar} className="progress-bar fixed inset-x-0 top-0 z-50 h-[3px] origin-left" style={{ transform: "scaleX(0)" }} />
       <div ref={spot} className="pointer-events-none fixed inset-0 z-0" />
       <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden">
+        {orbs.map((o, i) => (
+          <span
+            key={`orb-${i}`}
+            className="orb"
+            style={{ left: o.l, top: o.t, width: o.size, height: o.size, background: `radial-gradient(circle, ${o.color}, transparent 70%)`, animationDuration: o.dur }}
+          />
+        ))}
+        {stars.map((s, i) => (
+          <span key={`star-${i}`} className="star" style={{ left: `${s.l}%`, top: `${s.t}%`, animationDelay: `-${s.d}s`, animationDuration: `${s.s}s` }} />
+        ))}
+        {shoots.map((sh, i) => (
+          <span key={`shoot-${i}`} className="shooting-star" style={{ left: `${sh.l}%`, top: `${sh.t}%`, animationDelay: `-${sh.d}s` }} />
+        ))}
         {dots.map((d, i) => (
           <span key={i} className="particle" style={{ left: `${d.l}%`, top: `${d.t}%`, animationDelay: `-${d.d}s`, animationDuration: `${d.s}s` }} />
         ))}
