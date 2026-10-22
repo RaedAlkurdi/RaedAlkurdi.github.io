@@ -6,8 +6,8 @@
 import { defineConfig } from "@lovable.dev/vite-tanstack-config";
 
 // Static export for GitHub Pages: GITHUB_PAGES=true prerenders every page to plain HTML.
-const isGhPages = process.env.GITHUB_PAGES === "true";
-const basePath = process.env.BASE_PATH || "/";
+const isGhPages = process.env["GITHUB_PAGES"] === "true";
+const basePath = process.env["BASE_PATH"] || "/";
 
 export default defineConfig({
   tanstackStart: {
