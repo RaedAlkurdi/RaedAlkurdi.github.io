@@ -69,7 +69,7 @@ function Index() {
         <section className="container-page grid min-h-screen items-center gap-12 pt-28 pb-16 lg:grid-cols-[1.2fr_1fr]">
           <div className="fade-in">
             <span className="glass inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-[0.7rem] uppercase tracking-widest text-muted-foreground">
-              <span className="h-2 w-2 rounded-full bg-signal" /> Open to ML and AI roles
+              <span className="h-2 w-2 rounded-full bg-signal" /> Based in Gothenburg, Sweden
             </span>
             <h1 className="mt-6 text-6xl font-bold leading-[0.95] sm:text-7xl">Raed<br />Alkurdi</h1>
             <p className="mt-6 font-display text-2xl text-muted-foreground sm:text-3xl">
