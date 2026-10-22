@@ -1,8 +1,8 @@
 // Portfolio content shared by the page.
 export const profile = {
   name: "Raed Alkurdi",
-  title: "MSc student in Complex Adaptive Systems at Chalmers",
-  intro: "My projects range from training a Transformer from scratch to predicting football player values and customer churn.",
+  title: "MSc student in Complex Adaptive Systems @ Chalmers",
+  intro: "Machine Learning & Data Science track.",
   email: "alkurdiraed2@gmail.com",
   links: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/raed-alkurdi-a0a0642aa" },
