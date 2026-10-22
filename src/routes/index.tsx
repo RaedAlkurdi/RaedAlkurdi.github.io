@@ -99,6 +99,7 @@ function Index() {
         <section id="about" className="container-page py-24">
           <Heading label="About">A bit <span className="text-gradient">about me</span></Heading>
           <p className="reveal mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{profile.bio}</p>
+          <p className="reveal mt-5 max-w-3xl text-lg leading-relaxed text-muted-foreground">{profile.personal}</p>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {principles.map(([t, d], i) => (
               <div key={t} className="card-dark reveal p-7" style={{ "--d": `${i * 0.1}s` } as React.CSSProperties}>
