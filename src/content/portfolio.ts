@@ -21,6 +21,11 @@ export type Project = { title: string; description: string; tags: string[]; gith
 
 export const projects: Project[] = [
   {
+    title: "Support Ticket Assistant (in progress)",
+    description: "Currently building: an assistant that reads a customer support message, predicts its intent and decides whether to route it or send it to human review. It compares a TF-IDF + logistic regression baseline with a fine-tuned pretrained encoder, calibrates confidence scores, retrieves relevant help articles to draft grounded replies, and ties it together in a LangGraph workflow where a person always approves before anything is sent.",
+    tags: ["NLP", "RAG", "LangGraph", "In progress"],
+  },
+  {
     title: "Premier League Market Value Predictor",
     description: "Predicts a Premier League player's estimated market value from season statistics. Built on Transfermarkt data — appearances, player details and historical valuations — deriving goals, assists, minutes played, age and position. Trained on seasons up to 2023/24 and tested on 2024/25, reaching a mean absolute error of about €10.88 million.",
     tags: ["ML", "Regression", "Data Science"],
