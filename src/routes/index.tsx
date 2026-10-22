@@ -88,7 +88,7 @@ function Index() {
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-3/4 bg-[radial-gradient(circle_at_50%_70%,var(--glow),transparent_70%)]" />
               <HeroPhoto />
             </div>
-            {[["PyTorch", "-left-6 top-10"], ["Deep Learning", "-right-6 top-1/3"], ["ML", "-left-8 bottom-1/4"], ["Data Science", "-right-4 bottom-8"]].map(([t, pos], i) => (
+            {[["Agentic AI", "-left-6 top-10"], ["Deep Learning", "-right-6 top-1/3"], ["ML", "-left-8 bottom-1/4"], ["Data Science", "-right-4 bottom-8"]].map(([t, pos], i) => (
               <span key={t} className={`glass float absolute ${pos} rounded-full px-3 py-1.5 font-mono text-xs text-primary`} style={{ animationDelay: `${i * 0.6}s` }}>{t}</span>
             ))}
           </div>
