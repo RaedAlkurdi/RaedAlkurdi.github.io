@@ -2,7 +2,7 @@
 export const profile = {
   name: "Raed Alkurdi",
   title: "MSc Complex Adaptive Systems @ Chalmers",
-  intro: "I build learning systems and autonomous agents — from machine learning models to agentic AI that reasons, plans and acts.",
+  intro: "I build machine learning models that turn data into predictions — from deep learning trained from scratch to applied data science.",
   email: "alkurdiraed2@gmail.com",
   links: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/raed-alkurdi-a0a0642aa" },

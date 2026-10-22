@@ -75,7 +75,7 @@ function Index() {
             </span>
             <h1 className="mt-6 text-6xl font-bold leading-[0.95] sm:text-7xl">Raed<br />Alkurdi</h1>
             <p className="mt-6 font-display text-2xl text-muted-foreground sm:text-3xl">
-              I build <span className="text-gradient font-bold">Agentic AI</span><span className="cursor">_</span>
+              I build <span className="text-gradient font-bold">Machine Learning models</span><span className="cursor">_</span>
             </p>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               {profile.title}. {profile.intro}
@@ -91,7 +91,7 @@ function Index() {
               <div className="pointer-events-none absolute inset-x-0 bottom-0 h-3/4 bg-[radial-gradient(circle_at_50%_70%,var(--glow),transparent_70%)]" />
               <HeroPhoto />
             </div>
-            {[["RL", "-left-6 top-10"], ["Multi-agent", "-right-6 top-1/3"], ["ML", "-left-8 bottom-1/4"], ["LLMs", "-right-4 bottom-8"]].map(([t, pos], i) => (
+            {[["PyTorch", "-left-6 top-10"], ["Deep Learning", "-right-6 top-1/3"], ["ML", "-left-8 bottom-1/4"], ["Data Science", "-right-4 bottom-8"]].map(([t, pos], i) => (
               <span key={t} className={`glass float absolute ${pos} rounded-full px-3 py-1.5 font-mono text-xs text-primary`} style={{ animationDelay: `${i * 0.6}s` }}>{t}</span>
             ))}
           </div>
