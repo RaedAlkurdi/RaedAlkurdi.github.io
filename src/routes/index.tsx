@@ -174,7 +174,7 @@ function Index() {
                 <div>
                   <h3 className="text-lg font-bold">{e.role}</h3>
                   <p className="text-sm text-muted-foreground">{e.org}</p>
-                  <p className="mt-2 text-sm text-muted-foreground">{e.text}</p>
+                  {e.text && <p className="mt-2 text-sm text-muted-foreground">{e.text}</p>}
                 </div>
               </li>
             ))}
