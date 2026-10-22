@@ -22,7 +22,7 @@ export async function sendContact(input: unknown, signal?: AbortSignal) {
       replyto: data.email,
       botcheck: false,
     }),
-    signal,
+    signal: signal ?? null,
   });
   const result: unknown = await response.json();
   if (!response.ok || typeof result !== "object" || result === null || !("success" in result) || result.success !== true) {

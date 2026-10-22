@@ -8,7 +8,9 @@ describe("Web3Forms delivery", () => {
     const fetchMock = vi.fn().mockResolvedValue({ ok: true, json: async () => ({ success: true }) });
     vi.stubGlobal("fetch", fetchMock);
     await sendContact({ name: " Visitor ", email: "visitor@example.com", message: "Hello Raed" });
-    const [url, request] = fetchMock.mock.calls[0];
+    const call = fetchMock.mock.calls[0];
+    if (!call) throw new Error("Expected a Web3Forms request");
+    const [url, request] = call;
     expect(url).toBe("https://api.web3forms.com/submit");
     expect(JSON.parse(request.body)).toMatchObject({ name: "Visitor", email: "visitor@example.com", replyto: "visitor@example.com", message: "Hello Raed" });
   });
