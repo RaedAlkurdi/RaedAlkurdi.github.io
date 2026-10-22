@@ -165,7 +165,7 @@ function Index() {
         {/* Experience */}
         <section id="experience" className="container-page py-24">
           <div className="flex flex-wrap items-end justify-between gap-6">
-            <Heading label="Education">My studies <span className="text-gradient">at Chalmers</span></Heading>
+            <Heading label="Education">Academic <span className="text-gradient">background</span></Heading>
           </div>
           <ol className="mt-12 space-y-5">
             {experience.map((e) => (
