@@ -7,8 +7,8 @@ export const profile = {
   links: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/raed-alkurdi-a0a0642aa" },
   ],
-  bio: "I'm studying Complex Adaptive Systems at Chalmers University of Technology, on the Machine Learning & Data Science track. I also have a BSc in Mechanical Engineering from Chalmers. I like understanding how models work, so I've built a Transformer from scratch in PyTorch and worked through regression pipelines using real data. My projects give me a way to try out research ideas and see how well the models predict.",
-  personal: "Right now I'm spending most of my time on agentic AI: how agents plan, use tools and handle more than one step at a time. In my free time I play football and watch a lot of it.",
+  bio: "I'm studying Complex Adaptive Systems at Chalmers on the Machine Learning & Data Science track, and hold a BSc in Mechanical Engineering from Chalmers. I like knowing how models work, so I've built a Transformer from scratch in PyTorch and run regression pipelines on real data.",
+  personal: "Most of my time right now goes into agentic AI: how agents plan, use tools and handle several steps at once. In my free time I play football and watch a lot of it.",
 };
 
 export const skills = [
