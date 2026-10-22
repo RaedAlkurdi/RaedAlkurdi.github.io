@@ -7,14 +7,14 @@ export const profile = {
   links: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/raed-alkurdi-a0a0642aa" },
   ],
-  bio: "I'm a master's student at Chalmers University of Technology in Complex Adaptive Systems, on the Machine Learning & Data Science track, with a BSc in Mechanical Engineering from Chalmers. I'm drawn to how simple rules give rise to intelligent behavior — which led me to machine learning, reinforcement learning and agentic AI. I enjoy turning research ideas into working, well-engineered systems.",
+  bio: "I'm a master's student at Chalmers University of Technology in Complex Adaptive Systems, on the Machine Learning & Data Science track, with a BSc in Mechanical Engineering from Chalmers. I like understanding how things work under the hood — from a Transformer built from scratch in PyTorch to a full regression pipeline on real-world data. I enjoy turning data and research ideas into models that actually predict.",
 };
 
 export const skills = [
   { group: "Languages", items: ["Python", "C++", "SQL", "TypeScript"] },
-  { group: "ML frameworks", items: ["PyTorch", "JAX", "scikit-learn", "Hugging Face"] },
-  { group: "Agent tooling", items: ["LangGraph", "Tool calling", "RAG", "Evals"] },
-  { group: "Research areas", items: ["Reinforcement learning", "Multi-agent systems", "GNNs", "Complex systems"] },
+  { group: "ML frameworks", items: ["PyTorch", "scikit-learn", "XGBoost"] },
+  { group: "Data & analysis", items: ["pandas", "NumPy", "Jupyter"] },
+  { group: "Focus areas", items: ["Deep Learning", "Transformers", "Regression", "Classification"] },
 ];
 
 export type Project = { title: string; description: string; tags: string[]; github?: string; demo?: string };
