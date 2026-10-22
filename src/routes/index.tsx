@@ -28,9 +28,9 @@ const nav = [
 ] as const;
 
 const principles = [
-  ["Research-driven", "Grounded in theory from complex systems and machine learning."],
-  ["Agentic by design", "Tools, memory and multi-step reasoning that get real work done."],
-  ["Built to ship", "Clean, tested, observable code — not just notebooks."],
+  ["From first principles", "Built a decoder-only Transformer from scratch in raw PyTorch — no shortcuts, attention and all."],
+  ["End to end", "Owns the full pipeline: raw data, feature engineering, training, evaluation and reported results."],
+  ["Grounded in theory", "MSc in Complex Adaptive Systems — studying the math behind the models, not just the APIs."],
 ];
 
 
