@@ -32,6 +32,12 @@ export const projects: Project[] = [
     tags: ["ML", "Classification", "Data Science"],
     github: "https://github.com/RaedAlkurdi/customer-churn-project",
   },
+  {
+    title: "Transformer from Scratch",
+    description: "A small decoder-only, character-level Transformer built from scratch in PyTorch — no nn.Transformer or pretrained weights — to learn how attention and text generation work. Starting from a bigram model, it adds token and position embeddings, two causal self-attention heads, a feed-forward layer and residual connections, trained on Alice's Adventures in Wonderland (144,600 characters) to generate text one character at a time.",
+    tags: ["Deep Learning", "NLP", "PyTorch"],
+    github: "https://github.com/RaedAlkurdi/transformer-from-scratch",
+  },
 ];
 
 export const experience = [
