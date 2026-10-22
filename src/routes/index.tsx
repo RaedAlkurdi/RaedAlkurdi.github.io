@@ -2,7 +2,6 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Effects } from "@/components/portfolio/Effects";
 import { HeroPhoto } from "@/components/portfolio/HeroPhoto";
-import { AskAI } from "@/components/portfolio/AskAI";
 import { profile, skills, projects, experience } from "@/content/portfolio";
 
 export const Route = createFileRoute("/")({
@@ -53,7 +52,6 @@ function Index() {
   return (
     <div className="min-h-screen overflow-x-hidden text-foreground">
       <Effects />
-      <AskAI />
       <header id="site-header" className="fixed inset-x-0 top-4 z-20 px-4 transition-transform duration-500">
         <div className="glass-gold mx-auto flex h-14 max-w-5xl items-center justify-between rounded-full pl-6 pr-2">
           <a href="#top" className="font-display text-lg font-bold">RA<span className="text-primary">.</span></a>
