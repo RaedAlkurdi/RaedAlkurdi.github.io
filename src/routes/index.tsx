@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { useState } from "react";
 import { Effects } from "@/components/portfolio/Effects";
 import { HeroPhoto } from "@/components/portfolio/HeroPhoto";
+import { RotatingHeadline } from "@/components/portfolio/RotatingHeadline";
 import { profile, skills, projects, experience } from "@/content/portfolio";
 
 export const Route = createFileRoute("/")({
@@ -72,9 +73,7 @@ function Index() {
               <span className="h-2 w-2 rounded-full bg-signal" /> Based in Gothenburg, Sweden
             </span>
             <h1 className="mt-6 text-6xl font-bold leading-[0.95] sm:text-7xl">Raed<br />Alkurdi</h1>
-            <p className="mt-6 font-display text-2xl text-muted-foreground sm:text-3xl">
-              I build <span className="text-gradient font-bold">machine learning models</span><span className="cursor">_</span>
-            </p>
+            <RotatingHeadline />
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               {profile.title}. {profile.intro}
             </p>
