@@ -10,3 +10,4 @@
 <!-- LOVABLE:END -->
 - GitHub Pages: .github/workflows/deploy-pages.yml builds a static prerendered copy (GITHUB_PAGES=true, BASE_PATH) — Pages has no server, so no server routes.
 - Keep the rotating hero headline in its own browser-safe component with fixed grid sizing and reduced-motion support, so phrase changes do not shift the page or affect static hosting.
+- Contact messages go directly to the user-requested Web3Forms service using its public form key; validate before submitting and show success only after the service confirms acceptance, preserving static hosting.

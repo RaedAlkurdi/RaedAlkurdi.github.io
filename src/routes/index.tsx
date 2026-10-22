@@ -3,6 +3,7 @@ import { useState } from "react";
 import { Effects } from "@/components/portfolio/Effects";
 import { HeroPhoto } from "@/components/portfolio/HeroPhoto";
 import { RotatingHeadline } from "@/components/portfolio/RotatingHeadline";
+import { ContactForm } from "@/components/portfolio/ContactForm";
 import { profile, skills, projects, experience } from "@/content/portfolio";
 
 export const Route = createFileRoute("/")({
@@ -47,7 +48,6 @@ function Index() {
   const tags = ["All", ...Array.from(new Set(projects.flatMap((p) => p.tags)))];
   const [filter, setFilter] = useState("All");
   const shown = filter === "All" ? projects : projects.filter((p) => p.tags.includes(filter));
-  const [form, setForm] = useState({ name: "", message: "" });
   const tools = skills.flatMap((s) => s.items);
 
   return (
@@ -190,17 +190,7 @@ function Index() {
                 {profile.links.map((l) => <a key={l.label} href={l.href} target="_blank" rel="noreferrer" className="link">{l.label} ↗</a>)}
               </div>
             </div>
-            <form
-              className="space-y-4"
-              onSubmit={(e) => {
-                e.preventDefault();
-                window.location.href = `mailto:${profile.email}?subject=${encodeURIComponent(`Hello from ${form.name}`)}&body=${encodeURIComponent(form.message)}`;
-              }}
-            >
-              <input required placeholder="Your name" className="field" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-              <textarea required rows={5} placeholder="Your message" className="field" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
-              <button type="submit" className="btn-ink">Send Message</button>
-            </form>
+            <ContactForm />
           </div>
         </section>
       </main>
