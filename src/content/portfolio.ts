@@ -2,7 +2,7 @@
 export const profile = {
   name: "Raed Alkurdi",
   title: "MSc student in Complex Adaptive Systems @ Chalmers",
-  intro: "Machine Learning & Data Science track.",
+  intro: "I'd rather build the model than guess the answer.",
   email: "alkurdiraed2@gmail.com",
   links: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/raed-alkurdi-a0a0642aa" },
