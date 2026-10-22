@@ -1,5 +1,5 @@
 # Roadmap
 
 ## Current task
-- [ ] Rewrite all visitor-facing copy using Humanizer, preserving facts and design.
-- [ ] Check the rewritten page and project filters in the live preview.
+- [x] Rewrite all visitor-facing copy using Humanizer, preserving facts and design.
+- [x] Check the rewritten page and project filters in the live preview.
