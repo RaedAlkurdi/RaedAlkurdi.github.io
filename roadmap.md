@@ -1,5 +1,5 @@
 # Roadmap
 
-## Waiting on you
-- Real skills — send the tools/technologies you actually use (the current list is a placeholder)
-- About section's three principle cards — say the word and I'll rewrite them in your voice
+## Current task
+- [ ] Rewrite all visitor-facing copy using Humanizer, preserving facts and design.
+- [ ] Check the rewritten page and project filters in the live preview.

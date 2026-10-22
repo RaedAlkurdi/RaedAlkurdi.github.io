@@ -7,10 +7,10 @@ import { profile, skills, projects, experience } from "@/content/portfolio";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Raed Alkurdi — ML & Agentic AI Portfolio" },
-      { name: "description", content: "Portfolio of Raed Alkurdi, MSc student in Complex Adaptive Systems at Chalmers, building machine learning and agentic AI projects." },
-      { property: "og:title", content: "Raed Alkurdi — ML & Agentic AI Portfolio" },
-      { property: "og:description", content: "Machine learning, reinforcement learning and agentic AI projects by Raed Alkurdi." },
+      { title: "Raed Alkurdi | Machine learning projects" },
+      { name: "description", content: "I'm Raed Alkurdi, a Complex Adaptive Systems master's student at Chalmers. See my machine learning projects, skills and education." },
+      { property: "og:title", content: "Raed Alkurdi | Machine learning projects" },
+      { property: "og:description", content: "My projects include a Transformer built from scratch, football player valuation, customer churn prediction and a support ticket assistant in progress." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
     ],
@@ -21,15 +21,15 @@ export const Route = createFileRoute("/")({
 const nav = [
   ["about", "About"],
   ["skills", "Skills"],
-  ["projects", "Work"],
-  ["experience", "Journey"],
+  ["projects", "Projects"],
+  ["experience", "Education"],
   ["contact", "Contact"],
 ] as const;
 
 const principles = [
-  ["From first principles", "Built a decoder-only Transformer from scratch in raw PyTorch — no shortcuts, attention and all."],
-  ["End to end", "Owns the full pipeline: raw data, feature engineering, training, evaluation and reported results."],
-  ["Grounded in theory", "MSc in Complex Adaptive Systems — studying the math behind the models, not just the APIs."],
+  ["Building from scratch", "I built a decoder-only Transformer in PyTorch to understand how attention works."],
+  ["Working with data", "I work through the full pipeline, from raw data and feature engineering to training, evaluation and reporting results."],
+  ["Studying the theory", "My MSc in Complex Adaptive Systems gives me time to study the mathematics behind the models I build."],
 ];
 
 
@@ -69,18 +69,18 @@ function Index() {
         <section className="container-page grid min-h-screen items-center gap-12 pt-28 pb-16 lg:grid-cols-[1.2fr_1fr]">
           <div className="fade-in">
             <span className="glass inline-flex items-center gap-2 rounded-full px-3 py-1.5 font-mono text-[0.7rem] uppercase tracking-widest text-muted-foreground">
-              <span className="h-2 w-2 rounded-full bg-signal" /> Open to ML / AI roles
+              <span className="h-2 w-2 rounded-full bg-signal" /> Open to ML and AI roles
             </span>
             <h1 className="mt-6 text-6xl font-bold leading-[0.95] sm:text-7xl">Raed<br />Alkurdi</h1>
             <p className="mt-6 font-display text-2xl text-muted-foreground sm:text-3xl">
-              I build <span className="text-gradient font-bold">Machine Learning models</span><span className="cursor">_</span>
+              I build <span className="text-gradient font-bold">machine learning models</span><span className="cursor">_</span>
             </p>
             <p className="mt-6 max-w-xl text-lg leading-relaxed text-muted-foreground">
               {profile.title}. {profile.intro}
             </p>
             <div className="mt-10 flex flex-wrap gap-3">
-              <a href="#projects" className="btn-ink">✦ View my work</a>
-              <a href="#contact" className="btn-outline">Let's talk ↗</a>
+              <a href="#projects" className="btn-ink">See my projects</a>
+              <a href="#contact" className="btn-outline">Get in touch</a>
             </div>
           </div>
 
@@ -97,7 +97,7 @@ function Index() {
 
         {/* About */}
         <section id="about" className="container-page py-24">
-          <Heading label="About">Learning systems that <span className="text-gradient">adapt</span></Heading>
+          <Heading label="About">A bit <span className="text-gradient">about me</span></Heading>
           <p className="reveal mt-6 max-w-3xl text-lg leading-relaxed text-muted-foreground">{profile.bio}</p>
           <div className="mt-12 grid gap-5 md:grid-cols-3">
             {principles.map(([t, d], i) => (
@@ -113,12 +113,12 @@ function Index() {
         {/* Skills */}
         <section id="skills" className="py-24">
           <div className="container-page">
-            <Heading label="Toolkit">The stack behind the <span className="text-gradient">models</span></Heading>
+            <Heading label="Skills">What I <span className="text-gradient">work with</span></Heading>
             <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
               {skills.map((s, i) => (
                 <div key={s.group} className="card-dark reveal p-6" style={{ "--d": `${i * 0.1}s` } as React.CSSProperties}>
                   <h3 className="font-bold">{s.group}</h3>
-                  <p className="mt-1 font-mono text-xs text-muted-foreground">{s.items.length} technologies</p>
+                  <p className="mt-1 font-mono text-xs text-muted-foreground">{s.items.length} {s.group === "Focus areas" ? "topics" : s.group === "Languages" ? "languages" : "tools"}</p>
                   <div className="mt-5 flex flex-wrap gap-2">
                     {s.items.map((i) => <span key={i} className="tag">{i}</span>)}
                   </div>
@@ -137,7 +137,7 @@ function Index() {
 
         {/* Projects */}
         <section id="projects" className="container-page py-24">
-          <Heading label="Selected work">Projects in <span className="text-gradient">AI & ML</span></Heading>
+          <Heading label="Projects">What I've <span className="text-gradient">been building</span></Heading>
           <div className="mt-8 flex flex-wrap gap-2">
             {tags.map((t) => (
               <button key={t} onClick={() => setFilter(t)} className={filter === t ? "chip chip-active" : "chip"}>{t}</button>
@@ -153,8 +153,8 @@ function Index() {
                   {p.tags.map((t) => <span key={t} className="tag">{t}</span>)}
                 </div>
                 <div className="mt-5 flex gap-5 font-mono text-xs">
-                  {p.github && <a href={p.github} className="link">github ↗</a>}
-                  {p.demo && <a href={p.demo} className="link">demo ↗</a>}
+                  {p.github && <a href={p.github} className="link">View on GitHub ↗</a>}
+                  {p.demo && <a href={p.demo} className="link">Try the demo ↗</a>}
                 </div>
               </article>
             ))}
@@ -164,7 +164,7 @@ function Index() {
         {/* Experience */}
         <section id="experience" className="container-page py-24">
           <div className="flex flex-wrap items-end justify-between gap-6">
-            <Heading label="Journey">How I got <span className="text-gradient">here</span></Heading>
+            <Heading label="Education">My studies <span className="text-gradient">at Chalmers</span></Heading>
           </div>
           <ol className="mt-12 space-y-5">
             {experience.map((e) => (
@@ -184,7 +184,7 @@ function Index() {
         <section id="contact" className="container-page py-24">
           <div className="card-dark reveal grid gap-12 p-8 sm:p-12 lg:grid-cols-2">
             <div>
-              <Heading label="Contact">Let's build something <span className="text-shimmer">intelligent</span></Heading>
+              <Heading label="Contact">Let's talk <span className="text-shimmer">about ML</span></Heading>
               <a href={`mailto:${profile.email}`} className="mt-8 inline-block font-mono text-primary">{profile.email}</a>
               <div className="mt-4 flex gap-5 font-mono text-sm">
                 {profile.links.map((l) => <a key={l.label} href={l.href} target="_blank" rel="noreferrer" className="link">{l.label} ↗</a>)}
@@ -198,8 +198,8 @@ function Index() {
               }}
             >
               <input required placeholder="Your name" className="field" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} />
-              <textarea required rows={5} placeholder="Message" className="field" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
-              <button type="submit" className="btn-ink">Send message →</button>
+              <textarea required rows={5} placeholder="Your message" className="field" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} />
+              <button type="submit" className="btn-ink">Open email</button>
             </form>
           </div>
         </section>
@@ -208,7 +208,7 @@ function Index() {
       <footer className="border-t border-border">
         <div className="container-page flex h-16 items-center justify-between font-mono text-xs text-muted-foreground">
           <span>© {new Date().getFullYear()} {profile.name}</span>
-          <span>Gothenburg, SE</span>
+          <span>Gothenburg, Sweden</span>
         </div>
       </footer>
     </div>

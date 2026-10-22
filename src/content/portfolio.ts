@@ -1,13 +1,13 @@
-// Placeholder content — replace with real details.
+// Portfolio content shared by the page.
 export const profile = {
   name: "Raed Alkurdi",
-  title: "MSc Complex Adaptive Systems @ Chalmers",
-  intro: "I build machine learning models that turn data into predictions — from deep learning trained from scratch to applied data science.",
+  title: "MSc student in Complex Adaptive Systems at Chalmers",
+  intro: "My projects range from training a Transformer from scratch to predicting football player values and customer churn.",
   email: "alkurdiraed2@gmail.com",
   links: [
     { label: "LinkedIn", href: "https://www.linkedin.com/in/raed-alkurdi-a0a0642aa" },
   ],
-  bio: "I'm a master's student at Chalmers University of Technology in Complex Adaptive Systems, on the Machine Learning & Data Science track, with a BSc in Mechanical Engineering from Chalmers. I like understanding how things work under the hood — from a Transformer built from scratch in PyTorch to a full regression pipeline on real-world data. I enjoy turning data and research ideas into models that actually predict.",
+  bio: "I'm studying Complex Adaptive Systems at Chalmers University of Technology, on the Machine Learning & Data Science track. I also have a BSc in Mechanical Engineering from Chalmers. I like understanding how models work, so I've built a Transformer from scratch in PyTorch and worked through regression pipelines using real data. My projects give me a way to try out research ideas and see how well the models predict.",
 };
 
 export const skills = [
@@ -22,30 +22,30 @@ export type Project = { title: string; description: string; tags: string[]; gith
 export const projects: Project[] = [
   {
     title: "Support Ticket Assistant (in progress)",
-    description: "Currently building: an assistant that reads a customer support message, predicts its intent and decides whether to route it or send it to human review. It compares a TF-IDF + logistic regression baseline with a fine-tuned pretrained encoder, calibrates confidence scores, retrieves relevant help articles to draft grounded replies, and ties it together in a LangGraph workflow where a person always approves before anything is sent.",
+    description: "I'm building an assistant that reads support messages, predicts their intent and routes them or flags them for human review. The project compares TF-IDF with logistic regression against a fine-tuned pretrained encoder and calibrates confidence scores. It retrieves help articles to draft replies based on those sources. A LangGraph workflow brings these steps together, with a person approving every reply before it's sent.",
     tags: ["NLP", "RAG", "LangGraph", "In progress"],
   },
   {
     title: "Premier League Market Value Predictor",
-    description: "Predicts a Premier League player's estimated market value from season statistics. Built on Transfermarkt data — appearances, player details and historical valuations — deriving goals, assists, minutes played, age and position. Trained on seasons up to 2023/24 and tested on 2024/25, reaching a mean absolute error of about €10.88 million.",
+    description: "I built a model to predict Premier League players' estimated market values from season statistics. I used Transfermarkt appearances, player details and historical valuations to derive features including goals, assists, minutes played, age and position. I trained it on seasons up to 2023/24 and tested it on 2024/25. Its mean absolute error was about €10.88 million.",
     tags: ["ML", "Regression", "Data Science"],
     github: "https://github.com/RaedAlkurdi/premier-league-market-value-predictor",
   },
   {
     title: "Customer Churn Prediction",
-    description: "Identifies telecom customers likely to cancel, using IBM's Telco Customer Churn dataset of 7,043 customers. Compared a baseline, logistic regression and XGBoost, choosing the model and decision threshold on validation data. At a 0.35 threshold, logistic regression caught 267 of 374 churners in the test set — 71.4% recall.",
+    description: "I used IBM's Telco Customer Churn dataset of 7,043 customers to predict who would cancel. I compared a baseline with logistic regression and XGBoost, then used validation data to choose the model and decision threshold. At a threshold of 0.35, logistic regression identified 267 of the 374 customers who churned in the test set, giving 71.4% recall.",
     tags: ["ML", "Classification", "Data Science"],
     github: "https://github.com/RaedAlkurdi/customer-churn-project",
   },
   {
     title: "Transformer from Scratch",
-    description: "A small decoder-only, character-level Transformer built from scratch in PyTorch — no nn.Transformer or pretrained weights — to learn how attention and text generation work. Starting from a bigram model, it adds token and position embeddings, two causal self-attention heads, a feed-forward layer and residual connections, trained on Alice's Adventures in Wonderland (144,600 characters) to generate text one character at a time.",
+    description: "I built a small decoder-only Transformer in PyTorch to understand attention and text generation, without nn.Transformer or pretrained weights. I started with a bigram model, then added token and position embeddings, two causal self-attention heads, a feed-forward layer and residual connections. I trained it on Alice's Adventures in Wonderland (144,600 characters) to generate text one character at a time.",
     tags: ["Deep Learning", "NLP", "PyTorch"],
     github: "https://github.com/RaedAlkurdi/transformer-from-scratch",
   },
 ];
 
 export const experience = [
-  { period: "Aug 2026 — Jun 2028", role: "MSc, Complex Adaptive Systems — Machine Learning & Data Science track", org: "Chalmers University of Technology", text: "Master's studies focused on machine learning, data science and complex adaptive systems." },
-  { period: "Aug 2023 — Jun 2026", role: "BSc, Mechanical Engineering", org: "Chalmers University of Technology", text: "Bachelor's degree in Mechanical Engineering." },
+  { period: "Aug 2026 to Jun 2028", role: "MSc, Complex Adaptive Systems", org: "Chalmers University of Technology", text: "I'm on the Machine Learning & Data Science track, studying machine learning, data science and complex adaptive systems." },
+  { period: "Aug 2023 to Jun 2026", role: "BSc, Mechanical Engineering", org: "Chalmers University of Technology", text: "I completed my bachelor's degree in mechanical engineering at Chalmers." },
 ];
