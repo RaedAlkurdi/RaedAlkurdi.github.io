@@ -12,7 +12,7 @@ export const profile = {
 };
 
 export const skills = [
-  { group: "Languages", items: ["Python", "C++", "SQL", "TypeScript"] },
+  { group: "Languages", items: ["Python", "SQL"] },
   { group: "ML frameworks", items: ["PyTorch", "scikit-learn", "XGBoost", "Hugging Face", "LangGraph"] },
   { group: "Data & analysis", items: ["pandas", "NumPy", "Jupyter"] },
   { group: "Focus areas", items: ["Deep Learning", "NLP", "Transformers", "RAG", "Regression", "Classification", "Probability Calibration"] },
