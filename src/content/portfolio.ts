@@ -27,10 +27,10 @@ export const projects: Project[] = [
     tags: ["NLP", "RAG", "LangGraph", "In progress"],
   },
   {
-    title: "Premier League Market Value Predictor",
-    description: "Built a regression model to estimate Premier League player market values using Transfermarkt data. Tested on the 2024/25 season, achieving a mean absolute error of about €10.88 million.",
-    tags: ["ML", "Regression", "Data Science"],
-    github: "https://github.com/RaedAlkurdi/premier-league-market-value-predictor",
+    title: "Transformer from Scratch",
+    description: "Built a Transformer from scratch in PyTorch with causal self-attention, positional embeddings and residual connections. Trained on Alice's Adventures in Wonderland for character-level text generation, with no pretrained weights.",
+    tags: ["Deep Learning", "NLP", "PyTorch"],
+    github: "https://github.com/RaedAlkurdi/transformer-from-scratch",
   },
   {
     title: "Customer Churn Prediction",
@@ -39,10 +39,10 @@ export const projects: Project[] = [
     github: "https://github.com/RaedAlkurdi/customer-churn-project",
   },
   {
-    title: "Transformer from Scratch",
-    description: "Built a decoder-only Transformer from scratch in PyTorch with causal self-attention, embeddings and residual connections. Trained on Alice's Adventures in Wonderland for character-level text generation, without nn.Transformer or pretrained weights.",
-    tags: ["Deep Learning", "NLP", "PyTorch"],
-    github: "https://github.com/RaedAlkurdi/transformer-from-scratch",
+    title: "Premier League Market Value Predictor",
+    description: "Built a regression model to estimate Premier League player market values using Transfermarkt data. Tested on the 2024/25 season, achieving a mean absolute error of about €10.88 million.",
+    tags: ["ML", "Regression", "Data Science"],
+    github: "https://github.com/RaedAlkurdi/premier-league-market-value-predictor",
   },
 ];
 
