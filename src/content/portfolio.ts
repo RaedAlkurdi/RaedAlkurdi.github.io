@@ -8,7 +8,7 @@ export const profile = {
     { label: "LinkedIn", href: "https://www.linkedin.com/in/raed-alkurdi-a0a0642aa" },
   ],
   bio: "I'm studying Complex Adaptive Systems at Chalmers on the Machine Learning & Data Science track, and hold a BSc in Mechanical Engineering from Chalmers. I like knowing how models work, so I build them from the ground up and test them on real data.",
-  personal: "Most of my time right now goes into agentic AI: how agents plan, use tools and handle several steps at once. In my free time I play football and watch a lot of it.",
+  personal: "Most of my time right now goes into agentic AI: how agents plan, use tools and handle several steps at once. In my free time I like reading, watching and playing sports, and playing chess.",
 };
 
 export const skills = [
