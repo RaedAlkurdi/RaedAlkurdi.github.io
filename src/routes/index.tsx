@@ -29,9 +29,9 @@ const nav = [
 ] as const;
 
 const principles = [
-  ["Building from scratch", "Built a decoder-only Transformer in PyTorch to understand how attention works."],
-  ["Working with data", "Work across the full pipeline, from raw data and feature engineering to training, evaluation and reporting results."],
-  ["Studying the theory", "MSc in Complex Adaptive Systems leaves room to study the mathematics behind the models."],
+  ["Always learning", "I learn best by building, so I start with the part I don't understand yet."],
+  ["Working with data", "I handle the whole pipeline, from raw data and feature engineering to training, evaluation and reporting results."],
+  ["Studying the theory", "My MSc in Complex Adaptive Systems leaves room to study the maths behind the models."],
 ];
 
 
